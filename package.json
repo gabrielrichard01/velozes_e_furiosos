@@ -1,0 +1,26 @@
+{
+  "name": "velozes_e_furiosos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielrichard01/velozes_e_furiosos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielrichard01/velozes_e_furiosos/issues"
+  },
+  "homepage": "https://github.com/gabrielrichard01/velozes_e_furiosos#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.66.1"
+  }
+}
