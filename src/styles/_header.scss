@@ -1,0 +1,116 @@
+@use './variaveis';
+
+@font-face {
+    font-family: 'Aquawax';
+    src: url(../../font/aquawax/Aquawax\ Black\ Trial.ttf);
+}
+
+@font-face {
+    font-family: 'Fastup';
+    src: url(../../font/fastup/Fastup-Regular.ttf);
+}
+
+.header{
+    &__logo{
+        font-size: 30px;
+        font-family: 'Fastup';
+        text-decoration: none;
+        letter-spacing: 4px;
+        color: variaveis.$corPrimaria;
+    }
+
+    &__nav{
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: variaveis.$corFundo;
+        height: 60px;
+    }
+
+    &__nav__list{
+        list-style: none;
+        display: flex;
+        @media (max-width: 900px){
+            position: absolute;
+            top: 8vh;
+            right: 0;
+            width: 50vw;
+            height: 92vh;
+            background-color: variaveis.$corFundo;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            transform: translateX(100%);
+            transition: transform .3s ease-in;
+        }
+
+        &__item{
+            letter-spacing: 3px;
+            margin-left: 32px;
+            @media (max-width: 900px){
+                margin-left: 0;
+                opacity: 0;
+            }
+
+            &__link{
+                color: variaveis.$corPrimaria;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: .3s;
+                font-family: 'Aquawax';
+                font-size: 20px;
+        
+                &:hover{
+                    color: variaveis.$corSecundaria;
+                }
+            }
+        }
+    }
+
+    &__mobile-menu{
+        display: none;
+        cursor: pointer;
+        @media (max-width: 900px){
+            display: block;
+        }
+
+        div{
+            width: 32px;
+            height: 2px;
+            background-color: #fff;
+            margin: 8px;
+            transition: .3s;
+        }
+    }
+
+    &__nav__list.active{
+        transform: translateX(0);
+    }
+
+    &__mobile-menu.active{
+        .line1{
+            transform: rotate(-45deg) translate(-8px, 8px);
+        }
+
+        .line2{
+            opacity: 0;
+        }
+
+        .line3{
+            transform: rotate(45deg) translate(-5px, -7px);
+        }
+    }
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
