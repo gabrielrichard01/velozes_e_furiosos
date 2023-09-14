@@ -1,0 +1,14 @@
+@use './variaveis';
+
+.footer{
+    background-color: variaveis.$corFundo;
+    p{
+        font-size: 20px;
+        padding: 16px;
+        text-align: center;
+    }
+
+    span{
+        font-family: 'Fastup';
+    }
+}
